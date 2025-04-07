@@ -53,10 +53,9 @@ In this section, we will design a **basic speech recognition system** that can c
    - If you want the system to speak back to the user (e.g., "LED turned on"), you can use a Text-to-Speech library like **pyttsx3** to provide audio responses.
 
 ---CIRCUIT DESIGN
+![Circuit-Diagram](https://github.com/user-attachments/assets/5c35b603-ec9b-4981-aa22-8a0809973f0d)
 
-   ![Circuit-Diagram](https://github.com/user-attachments/assets/040c53ff-60d2-4b66-b2a6-32451377599f)
-
-
+   
 ### **Detailed System Design**
 
 #### **1. Hardware Setup**
