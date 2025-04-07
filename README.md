@@ -1,3 +1,18 @@
+NAME : AAKINA LAKSHMI PRADEEP
+
+COMPANY : CODTECH IT SOLUTIONS
+
+INTERN ID : CT06WR44
+
+DOMAIN : EMBEDDED SYSTEMS
+
+DURATION : MARCH 30th, 2025 to MAY 15th, 2025 (6 WEEKS)
+
+MENTOR : NEELA SANTHOSH
+
+OVERVIEW : SPEECH RECOGNITION SYSTEM
+
+
 ### **System Design for a Speech Recognition System to Control Devices Using an Embedded Board**
 
 In this section, we will design a **basic speech recognition system** that can control devices based on voice commands, using an embedded board (like the **Raspberry Pi**). This system will listen for voice commands, process the audio, and perform specific actions like turning devices (LEDs, motors, etc.) on or off.
