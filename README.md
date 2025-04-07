@@ -52,7 +52,10 @@ In this section, we will design a **basic speech recognition system** that can c
 4. **Audio Feedback (Optional):**
    - If you want the system to speak back to the user (e.g., "LED turned on"), you can use a Text-to-Speech library like **pyttsx3** to provide audio responses.
 
----
+---CIRCUIT DESIGN
+
+   ![Circuit-Diagram](https://github.com/user-attachments/assets/040c53ff-60d2-4b66-b2a6-32451377599f)
+
 
 ### **Detailed System Design**
 
@@ -91,61 +94,7 @@ In this section, we will design a **basic speech recognition system** that can c
    - The Python script will listen to commands via the microphone.
    - The system will recognize speech and control devices based on the command (e.g., turning on/off an LED).
 
-   **Python Code Example**:
-
-   ```python
-   import speech_recognition as sr
-   import RPi.GPIO as GPIO
-   import pyttsx3
-   from time import sleep
-
-   # Setup GPIO for controlling devices
-   GPIO.setmode(GPIO.BCM)
-   LED_PIN = 17  # GPIO pin for LED
-   GPIO.setup(LED_PIN, GPIO.OUT)
-
-   # Initialize text-to-speech engine
-   engine = pyttsx3.init()
-
-   # Function to speak feedback
-   def speak(text):
-       engine.say(text)
-       engine.runAndWait()
-
-   # Function to control devices based on voice command
-   def control_device(command):
-       if "turn on" in command:
-           GPIO.output(LED_PIN, GPIO.HIGH)  # Turn on LED
-           speak("LED turned on")
-       elif "turn off" in command:
-           GPIO.output(LED_PIN, GPIO.LOW)  # Turn off LED
-           speak("LED turned off")
-       else:
-           speak("Command not recognized")
-
-   # Initialize recognizer
-   recognizer = sr.Recognizer()
-
-   # Main loop for listening to voice commands
-   while True:
-       with sr.Microphone() as source:
-           print("Listening for commands...")
-           recognizer.adjust_for_ambient_noise(source)  # Adjust for background noise
-           audio = recognizer.listen(source)  # Listen for speech
-
-       try:
-           print("Recognizing speech...")
-           command = recognizer.recognize_google(audio)  # Recognize using Google Speech API
-           print(f"Command received: {command}")
-           control_device(command.lower())  # Process the command
-       except sr.UnknownValueError:
-           print("Sorry, I did not understand the command.")
-       except sr.RequestError:
-           print("Error with the speech recognition service.")
-
-       sleep(1)  # Add a small delay to avoid continuous listening
-   ```
-
+   
 #### **Code Explanation**:
 
 - **Speech Recognition**: The script uses the **SpeechRecognition** library to capture audio from the microphone and convert it to text.
